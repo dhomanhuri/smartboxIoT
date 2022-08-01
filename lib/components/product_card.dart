@@ -7,7 +7,7 @@ import '../constants.dart';
 import '../size_config.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({
+  ProductCard({
     Key? key,
     this.width = 300,
     this.aspectRetio = 1.02,
@@ -64,27 +64,7 @@ class ProductCard extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-                  // InkWell(
-                  //   borderRadius: BorderRadius.circular(50),
-                  //   onTap: () {},
-                  //   child: Container(
-                  //     padding: EdgeInsets.all(getProportionateScreenWidth(8)),
-                  //     height: getProportionateScreenWidth(28),
-                  //     width: getProportionateScreenWidth(28),
-                  //     decoration: BoxDecoration(
-                  //       color: product.isFavourite
-                  //           ? kPrimaryColor.withOpacity(0.15)
-                  //           : kSecondaryColor.withOpacity(0.1),
-                  //       shape: BoxShape.circle,
-                  //     ),
-                  //     child: SvgPicture.asset(
-                  //       "assets/icons/Heart Icon_2.svg",
-                  //       color: product.isFavourite
-                  //           ? Color(0xFFFF4848)
-                  //           : Color(0xFFDBDEE4),
-                  //     ),
-                  //   ),
-                  // ),
+                  Text("\Stock. ${product.stock.toInt()}")
                 ],
               )
             ],

@@ -10,4 +10,7 @@ int count = 0;
 int item1 = 0;
 int item2 = 0;
 int item3 = 0;
+int data1 = 0;
+int data2 = 0;
+int data3 = 0;
 String api = 'https://syamsul.promaydo.net/';
