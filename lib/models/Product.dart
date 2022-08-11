@@ -45,7 +45,7 @@ List<Product> demoProducts = [
       rating: 4.8,
       isFavourite: true,
       isPopular: true,
-      stock: globals.data1),
+      stock: 3),
   Product(
       id: 2,
       images: [

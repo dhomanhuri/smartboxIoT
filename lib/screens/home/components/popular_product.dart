@@ -21,7 +21,7 @@ class _PopularProductsState extends State<PopularProducts> {
   int a = 0;
   int b = 0;
   int c = 0;
-
+  int datastock = 0;
   @override
   void initState() {
     super.initState();
@@ -31,6 +31,7 @@ class _PopularProductsState extends State<PopularProducts> {
   Future<void> getSold() async {
     var url = "https://syamsul.promaydo.net/getsold.php";
     var response = await http.get(Uri.parse(url));
+
     setState(() {
       sold = json.decode(response.body);
     });
@@ -65,10 +66,21 @@ class _PopularProductsState extends State<PopularProducts> {
               ...List.generate(
                 demoProducts.length,
                 (index) {
+                  if (index == 0) {
+                    datastock = a;
+                  } else if (index == 1) {
+                    datastock = b;
+                  } else {
+                    datastock = c;
+                  }
                   // print(index);
-                  if (demoProducts[index].isPopular)
-                    return ProductCard(product: demoProducts[index]);
-
+                  if (datastock <= 2) {
+                    if (demoProducts[index].isPopular)
+                      return ProductCard(
+                        product: demoProducts[index],
+                        a: datastock,
+                      );
+                  }
                   return SizedBox
                       .shrink(); // here by default width and height is 0
                 },
